@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jinsim.springboilerplate.account.repository.AccountRepositoryTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-11-25T03:42:27" hostname="hyeonjaes-MacBook-Pro.local" time="0.059">
+  <properties/>
+  <testcase name="existsByEmail_존재하지않는_경우()" classname="com.jinsim.springboilerplate.account.repository.AccountRepositoryTest" time="0.05"/>
+  <testcase name="findByEmailTest()" classname="com.jinsim.springboilerplate.account.repository.AccountRepositoryTest" time="0.005"/>
+  <testcase name="existsByEmail_존재하는_경우()" classname="com.jinsim.springboilerplate.account.repository.AccountRepositoryTest" time="0.003"/>
+  <system-out><![CDATA[2025-11-25 12:42:27.495  INFO 18523 --- [    Test worker] b.t.a.o.j.DataJpaTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.jinsim.springboilerplate.account.repository.AccountRepositoryTest], using SpringBootContextLoader
+2025-11-25 12:42:27.495  INFO 18523 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.jinsim.springboilerplate.account.repository.AccountRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-11-25 12:42:27.495  INFO 18523 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.jinsim.springboilerplate.account.repository.AccountRepositoryTest]: AccountRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-25 12:42:27.500  INFO 18523 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.jinsim.springboilerplate.SpringBoilerplateApplication for test class com.jinsim.springboilerplate.account.repository.AccountRepositoryTest
+2025-11-25 12:42:27.500  INFO 18523 --- [    Test worker] b.t.a.o.j.DataJpaTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2025-11-25 12:42:27.500  INFO 18523 --- [    Test worker] b.t.a.o.j.DataJpaTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2de22e7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2c51ff83, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@196519dd, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@f341e3c, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7c8ecc27, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5f8089d2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6e1ac80e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4170ee0f, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@4b95fdf2, org.springframework.test.context.event.EventPublishingTestExecutionListener@1080234b, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@28e2d3ed, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6e245068, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@aba4a33, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1bb1ba54, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@25727f74, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6999dca2, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@312af870]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2025-11-25 12:42:27.509  WARN 18523 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/Users/jaehyeonahn/.gradle/caches/modules-2/files-2.1/org.json/json/20220320/6df2c050972619466f6dcef7654ef9bcc01dfd0/json-20220320.jar!/org/json/JSONObject.class
+	jar:file:/Users/jaehyeonahn/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2025-11-25 12:42:27.509  INFO 18523 --- [    Test worker] c.j.s.a.r.AccountRepositoryTest          : Starting AccountRepositoryTest using Java 17.0.17 on hyeonjaes-MacBook-Pro.local with PID 18523 (started by jaehyeonahn in /Users/jaehyeonahn/Desktop/github/springBoot-boilarPlate-2025)
+2025-11-25 12:42:27.509  INFO 18523 --- [    Test worker] c.j.s.a.r.AccountRepositoryTest          : No active profile set, falling back to 1 default profile: "test"
+2025-11-25 12:42:27.533  INFO 18523 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-25 12:42:27.533  INFO 18523 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-25 12:42:27.539  INFO 18523 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 4 JPA repository interfaces.
+2025-11-25 12:42:27.555  INFO 18523 --- [    Test worker] c.g.g.b.j.d.p6spy.P6SpyConfiguration     : P6Spy modulelist is overridden, some p6spy configuration features will not be applied
+2025-11-25 12:42:27.561  INFO 18523 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-11-25 12:42:27.562  INFO 18523 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-11-25 12:42:27.565  INFO 18523 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-25 12:42:27.567  INFO 18523 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-11-25 12:42:27.589  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147589 | took 0ms | statement | connection 6| url jdbc:h2:mem:testdb
+drop table if exists account CASCADE 
+drop table if exists account CASCADE ;
+2025-11-25 12:42:27.589  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147589 | took 0ms | statement | connection 6| url jdbc:h2:mem:testdb
+drop table if exists comment CASCADE 
+drop table if exists comment CASCADE ;
+2025-11-25 12:42:27.590  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147590 | took 0ms | statement | connection 6| url jdbc:h2:mem:testdb
+drop table if exists post CASCADE 
+drop table if exists post CASCADE ;
+2025-11-25 12:42:27.590  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147590 | took 0ms | statement | connection 6| url jdbc:h2:mem:testdb
+drop table if exists post_like CASCADE 
+drop table if exists post_like CASCADE ;
+2025-11-25 12:42:27.590  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147590 | took 0ms | statement | connection 7| url jdbc:h2:mem:testdb
+create table account (account_id bigint generated by default as identity, create_date timestamp, modified_date timestamp, email varchar(255) not null, encoded_password varchar(255) not null, name varchar(255) not null, primary key (account_id))
+create table account (account_id bigint generated by default as identity, create_date timestamp, modified_date timestamp, email varchar(255) not null, encoded_password varchar(255) not null, name varchar(255) not null, primary key (account_id));
+2025-11-25 12:42:27.591  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147591 | took 0ms | statement | connection 7| url jdbc:h2:mem:testdb
+create table comment (comment_id bigint generated by default as identity, create_date timestamp, modified_date timestamp, content varchar(1000) not null, post_id bigint not null, account_id bigint not null, primary key (comment_id))
+create table comment (comment_id bigint generated by default as identity, create_date timestamp, modified_date timestamp, content varchar(1000) not null, post_id bigint not null, account_id bigint not null, primary key (comment_id));
+2025-11-25 12:42:27.591  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147591 | took 0ms | statement | connection 7| url jdbc:h2:mem:testdb
+create table post (post_id bigint generated by default as identity, create_date timestamp, modified_date timestamp, content TEXT not null, title varchar(500) not null, view_count integer, account_id bigint not null, primary key (post_id))
+create table post (post_id bigint generated by default as identity, create_date timestamp, modified_date timestamp, content TEXT not null, title varchar(500) not null, view_count integer, account_id bigint not null, primary key (post_id));
+2025-11-25 12:42:27.592  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147592 | took 0ms | statement | connection 7| url jdbc:h2:mem:testdb
+create table post_like (post_like_id bigint generated by default as identity, post_id bigint not null, account_id bigint not null, primary key (post_like_id))
+create table post_like (post_like_id bigint generated by default as identity, post_id bigint not null, account_id bigint not null, primary key (post_like_id));
+2025-11-25 12:42:27.592  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147592 | took 0ms | statement | connection 7| url jdbc:h2:mem:testdb
+alter table comment add constraint FKs1slvnkuemjsq2kj4h3vhx7i1 foreign key (post_id) references post
+alter table comment add constraint FKs1slvnkuemjsq2kj4h3vhx7i1 foreign key (post_id) references post;
+2025-11-25 12:42:27.593  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147593 | took 0ms | statement | connection 7| url jdbc:h2:mem:testdb
+alter table comment add constraint FKp41h5al2ajp1q0u6ox3i68w61 foreign key (account_id) references account
+alter table comment add constraint FKp41h5al2ajp1q0u6ox3i68w61 foreign key (account_id) references account;
+2025-11-25 12:42:27.593  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147593 | took 0ms | statement | connection 7| url jdbc:h2:mem:testdb
+alter table post add constraint FKe5hjewhnd6trrdgt8i6uapkhy foreign key (account_id) references account
+alter table post add constraint FKe5hjewhnd6trrdgt8i6uapkhy foreign key (account_id) references account;
+2025-11-25 12:42:27.594  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147594 | took 0ms | statement | connection 7| url jdbc:h2:mem:testdb
+alter table post_like add constraint FKj7iy0k7n3d0vkh8o7ibjna884 foreign key (post_id) references post
+alter table post_like add constraint FKj7iy0k7n3d0vkh8o7ibjna884 foreign key (post_id) references post;
+2025-11-25 12:42:27.594  INFO 18523 --- [    Test worker] p6spy                                    : #1764042147594 | took 0ms | statement | connection 7| url jdbc:h2:mem:testdb
+alter table post_like add constraint FKcukkfowmvhtty0npyl6lttkpv foreign key (account_id) references account
+alter table post_like add constraint FKcukkfowmvhtty0npyl6lttkpv foreign key (account_id) references account;
+2025-11-25 12:42:27.595  INFO 18523 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-11-25 12:42:27.595  INFO 18523 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-25 12:42:27.638  INFO 18523 --- [    Test worker] c.j.s.a.r.AccountRepositoryTest          : Started AccountRepositoryTest in 0.136 seconds (JVM running for 2.356)
+2025-11-25 12:42:27.642  INFO 18523 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@7bd0e2e9 testClass = AccountRepositoryTest, testInstance = com.jinsim.springboilerplate.account.repository.AccountRepositoryTest@6701fe26, testMethod = existsByEmail_존재하지않는_경우@AccountRepositoryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6ac49084 testClass = AccountRepositoryTest, locations = '{}', classes = '{class com.jinsim.springboilerplate.SpringBoilerplateApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@3eff5c32, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@40238dd0, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@7a0bb85d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6e950bcf, [ImportsContextCustomizer@10e542f3 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, com.github.gavlyukovskiy.boot.jdbc.decorator.DataSourceDecoratorAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, com.jinsim.springboilerplate.global.config.P6SpyConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@525575, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@53dbe163, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75583206]; rollback [true]
+2025-11-25 12:42:27.671  INFO 18523 --- [    Test worker] p6spy                                    : 
+
+    INSERT 
+    INTO
+        ACCOUNT
+        (ACCOUNT_ID, CREATE_DATE, EMAIL, ENCODED_PASSWORD, NAME) 
+    VALUES
+        (DEFAULT, '2025-11-25T12:42:27.650', 'TEST@GMAIL.COM', 'ENCODEDPASSWORD', '테스트계정')
+
+	Connection ID: 8
+	Execution Time: 1 ms
+
+	Call Stack (number 1 is entry point): 
+
+----------------------------------------------------------------------------------------------------
+2025-11-25 12:42:27.687  INFO 18523 --- [    Test worker] p6spy                                    : 
+
+    SELECT
+        ACCOUNT0_.ACCOUNT_ID AS COL_0_0_ 
+    FROM
+        ACCOUNT ACCOUNT0_ 
+    WHERE
+        ACCOUNT0_.EMAIL='FALSETEST@GMAIL.COM' LIMIT 1
+
+	Connection ID: 8
+	Execution Time: 0 ms
+
+	Call Stack (number 1 is entry point): 
+
+----------------------------------------------------------------------------------------------------
+2025-11-25 12:42:27.689  INFO 18523 --- [    Test worker] p6spy                                    : 
+2025-11-25 12:42:27.690  INFO 18523 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@7bd0e2e9 testClass = AccountRepositoryTest, testInstance = com.jinsim.springboilerplate.account.repository.AccountRepositoryTest@6701fe26, testMethod = existsByEmail_존재하지않는_경우@AccountRepositoryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6ac49084 testClass = AccountRepositoryTest, locations = '{}', classes = '{class com.jinsim.springboilerplate.SpringBoilerplateApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@3eff5c32, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@40238dd0, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@7a0bb85d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6e950bcf, [ImportsContextCustomizer@10e542f3 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, com.github.gavlyukovskiy.boot.jdbc.decorator.DataSourceDecoratorAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, com.jinsim.springboilerplate.global.config.P6SpyConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@525575, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@53dbe163, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2025-11-25 12:42:27.691  INFO 18523 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@7bd0e2e9 testClass = AccountRepositoryTest, testInstance = com.jinsim.springboilerplate.account.repository.AccountRepositoryTest@2026af0, testMethod = findByEmailTest@AccountRepositoryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6ac49084 testClass = AccountRepositoryTest, locations = '{}', classes = '{class com.jinsim.springboilerplate.SpringBoilerplateApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@3eff5c32, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@40238dd0, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@7a0bb85d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6e950bcf, [ImportsContextCustomizer@10e542f3 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, com.github.gavlyukovskiy.boot.jdbc.decorator.DataSourceDecoratorAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, com.jinsim.springboilerplate.global.config.P6SpyConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@525575, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@53dbe163, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75583206]; rollback [true]
+2025-11-25 12:42:27.692  INFO 18523 --- [    Test worker] p6spy                                    : 
+
+    INSERT 
+    INTO
+        ACCOUNT
+        (ACCOUNT_ID, CREATE_DATE, EMAIL, ENCODED_PASSWORD, NAME) 
+    VALUES
+        (DEFAULT, '2025-11-25T12:42:27.691', 'TEST@GMAIL.COM', 'ENCODEDPASSWORD', '테스트계정')
+
+	Connection ID: 9
+	Execution Time: 0 ms
+
+	Call Stack (number 1 is entry point): 
+
+----------------------------------------------------------------------------------------------------
+2025-11-25 12:42:27.694  INFO 18523 --- [    Test worker] p6spy                                    : 
+
+    SELECT
+        ACCOUNT0_.ACCOUNT_ID AS ACCOUNT_1_0_,
+        ACCOUNT0_.CREATE_DATE AS CREATE_D2_0_,
+        ACCOUNT0_.MODIFIED_DATE AS MODIFIED3_0_,
+        ACCOUNT0_.EMAIL AS EMAIL4_0_,
+        ACCOUNT0_.ENCODED_PASSWORD AS ENCODED_5_0_,
+        ACCOUNT0_.NAME AS NAME6_0_ 
+    FROM
+        ACCOUNT ACCOUNT0_ 
+    WHERE
+        ACCOUNT0_.EMAIL='TEST@GMAIL.COM'
+
+	Connection ID: 9
+	Execution Time: 0 ms
+
+	Call Stack (number 1 is entry point): 
+
+----------------------------------------------------------------------------------------------------
+2025-11-25 12:42:27.695  INFO 18523 --- [    Test worker] p6spy                                    : 
+2025-11-25 12:42:27.695  INFO 18523 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@7bd0e2e9 testClass = AccountRepositoryTest, testInstance = com.jinsim.springboilerplate.account.repository.AccountRepositoryTest@2026af0, testMethod = findByEmailTest@AccountRepositoryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6ac49084 testClass = AccountRepositoryTest, locations = '{}', classes = '{class com.jinsim.springboilerplate.SpringBoilerplateApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@3eff5c32, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@40238dd0, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@7a0bb85d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6e950bcf, [ImportsContextCustomizer@10e542f3 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, com.github.gavlyukovskiy.boot.jdbc.decorator.DataSourceDecoratorAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, com.jinsim.springboilerplate.global.config.P6SpyConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@525575, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@53dbe163, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2025-11-25 12:42:27.696  INFO 18523 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@7bd0e2e9 testClass = AccountRepositoryTest, testInstance = com.jinsim.springboilerplate.account.repository.AccountRepositoryTest@6e211727, testMethod = existsByEmail_존재하는_경우@AccountRepositoryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6ac49084 testClass = AccountRepositoryTest, locations = '{}', classes = '{class com.jinsim.springboilerplate.SpringBoilerplateApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@3eff5c32, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@40238dd0, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@7a0bb85d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6e950bcf, [ImportsContextCustomizer@10e542f3 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, com.github.gavlyukovskiy.boot.jdbc.decorator.DataSourceDecoratorAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, com.jinsim.springboilerplate.global.config.P6SpyConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@525575, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@53dbe163, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@75583206]; rollback [true]
+2025-11-25 12:42:27.697  INFO 18523 --- [    Test worker] p6spy                                    : 
+
+    INSERT 
+    INTO
+        ACCOUNT
+        (ACCOUNT_ID, CREATE_DATE, EMAIL, ENCODED_PASSWORD, NAME) 
+    VALUES
+        (DEFAULT, '2025-11-25T12:42:27.697', 'TEST@GMAIL.COM', 'ENCODEDPASSWORD', '테스트계정')
+
+	Connection ID: 10
+	Execution Time: 0 ms
+
+	Call Stack (number 1 is entry point): 
+
+----------------------------------------------------------------------------------------------------
+2025-11-25 12:42:27.698  INFO 18523 --- [    Test worker] p6spy                                    : 
+
+    SELECT
+        ACCOUNT0_.ACCOUNT_ID AS COL_0_0_ 
+    FROM
+        ACCOUNT ACCOUNT0_ 
+    WHERE
+        ACCOUNT0_.EMAIL='TEST@GMAIL.COM' LIMIT 1
+
+	Connection ID: 10
+	Execution Time: 0 ms
+
+	Call Stack (number 1 is entry point): 
+
+----------------------------------------------------------------------------------------------------
+2025-11-25 12:42:27.699  INFO 18523 --- [    Test worker] p6spy                                    : 
+2025-11-25 12:42:27.699  INFO 18523 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@7bd0e2e9 testClass = AccountRepositoryTest, testInstance = com.jinsim.springboilerplate.account.repository.AccountRepositoryTest@6e211727, testMethod = existsByEmail_존재하는_경우@AccountRepositoryTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6ac49084 testClass = AccountRepositoryTest, locations = '{}', classes = '{class com.jinsim.springboilerplate.SpringBoilerplateApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@3eff5c32, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@40238dd0, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@7a0bb85d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6e950bcf, [ImportsContextCustomizer@10e542f3 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, com.github.gavlyukovskiy.boot.jdbc.decorator.DataSourceDecoratorAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, com.jinsim.springboilerplate.global.config.P6SpyConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@525575, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@53dbe163, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

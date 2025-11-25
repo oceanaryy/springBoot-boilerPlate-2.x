@@ -1,0 +1,74 @@
+package com.hyeonjae.boilerplate.domain.board.api;
+
+import com.hyeonjae.boilerplate.domain.account.domain.Account;
+import com.hyeonjae.boilerplate.domain.account.service.AuthUser;
+import com.hyeonjae.boilerplate.domain.board.domain.Comment;
+import com.hyeonjae.boilerplate.domain.board.domain.Post;
+import com.hyeonjae.boilerplate.domain.board.domain.PostLike;
+import com.hyeonjae.boilerplate.domain.board.service.CommentService;
+import com.hyeonjae.boilerplate.domain.board.service.PostLikeService;
+import com.hyeonjae.boilerplate.domain.board.service.PostService;
+import com.hyeonjae.boilerplate.domain.board.dto.CommentListResDto;
+import com.hyeonjae.boilerplate.domain.board.dto.PostListResDto;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.Parameters;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@Tag(name = "Account Board API", description = "회원 게시판 API")
+@Slf4j
+@RestController
+@RequestMapping("/accounts/{accountId}")
+@RequiredArgsConstructor
+public class AccountBoardController {
+
+    private final CommentService commentService;
+    private final PostService postService;
+    private final PostLikeService postLikeService;
+
+    @Operation(summary = "작성 댓글 목록 조회", description = "특정 회원이 작성한 댓글 목록을 조회합니다.")
+    @Parameters({
+            @Parameter(name = "accountId", description = "회원 아이디", example = "1")
+    })
+    @GetMapping("/comments")
+    @PreAuthorize("isAuthenticated() and (( @accountService.findById(#accountId).getEmail() == principal.username ) or hasRole('ROLE_ADMIN'))")
+    @ResponseStatus(value = HttpStatus.OK)
+    public CommentListResDto.Account getAccountComments(@PathVariable final Long accountId, @AuthUser Account account) {
+        List<Comment> commentList = commentService.findByWriter(account);
+        return CommentListResDto.Account.of(account.getName(), commentList);
+    }
+
+    @Operation(summary = "작성 게시글 목록 조회", description = "특정 회원이 작성한 게시글 목록을 조회합니다.")
+    @Parameters({
+            @Parameter(name = "accountId", description = "회원 아이디", example = "1")
+    })
+    @GetMapping("/posts")
+    @PreAuthorize("isAuthenticated() and (( @accountService.findById(#accountId).getEmail() == principal.username ) or hasRole('ROLE_ADMIN'))")
+    @ResponseStatus(value = HttpStatus.OK)
+    public PostListResDto getAccountPosts(@PathVariable final Long accountId, @AuthUser Account account) {
+        List<Post> postList = postService.findByWriter(account);
+        return PostListResDto.of(postList);
+    }
+
+    @Operation(summary = "좋아요 게시글 목록 조회", description = "특정 회원이 좋아요한 게시글 목록을 조회합니다.")
+    @Parameters({
+            @Parameter(name = "accountId", description = "회원 아이디", example = "1")
+    })
+    @GetMapping("/like/posts")
+    @PreAuthorize("isAuthenticated() and (( @accountService.findById(#accountId).getEmail() == principal.username ) or hasRole('ROLE_ADMIN'))")
+    @ResponseStatus(value = HttpStatus.OK)
+    public PostListResDto getAccountLikePosts(@PathVariable final Long accountId, @AuthUser Account account) {
+        List<PostLike> postLikeList = postLikeService.findByWriter(account);
+        List<Post> likePostList = postLikeService.findLikePostList(postLikeList);
+
+        return PostListResDto.of(likePostList);
+    }
+
+}
