@@ -122,3 +122,14 @@ export REDIS_PASSWORD=1234
 
 본 레포지토리는 **Spring Boot 2.7.3 버전 개발을 위한 최종 스냅샷**입니다.  
 Spring Boot 3.x / 4.x 관련 소스는 별도 신규 레포지토리에서 작성됩니다.
+
+## 📄 License
+
+MIT License  
+사용 및 수정 자유롭게 가능
+"""
+
+path = Path("/mnt/data/README.md")
+path.write_text(content, encoding="utf-8")
+
+path
