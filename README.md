@@ -1,7 +1,3 @@
-from pathlib import Path
-
-content = """# 📦 Spring Boot Boilerplate (v2.7.3)
-
 이 레포지토리는 **Spring Boot 2.7.3 기반의 백엔드 보일러플레이트**입니다.  
 운영/개발 환경에서 바로 사용할 수 있도록 기본적인 인증, JWT, Redis 캐시, MySQL 연동, Swagger, Docker 실행 환경을 포함합니다.
 
